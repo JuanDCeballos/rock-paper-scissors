@@ -15,16 +15,23 @@ function playerPlay() {
   //   return option.toLowerCase();
 }
 
+let playerPoints = 0;
+let computerPoints = 0;
+
 function playRound(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
     return "It's a tie";
   } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
+    playerPoints++;
     return `You won! ${playerSelection} beats ${computerSelection}`;
   } else if (playerSelection === 'paper' && computerSelection === 'rock') {
+    playerPoints++;
     return `You won! ${playerSelection} beats ${computerSelection}`;
   } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
+    playerPoints++;
     return `You won! ${playerSelection} beats ${computerSelection}`;
   } else {
+    computerPoints++;
     return `You lose! ${computerSelection} beats ${playerSelection}`;
   }
 }
@@ -34,16 +41,18 @@ function game() {
   for (let i = 0; i < 5; i++) {
     const playerSelection = playerPlay();
     const computerSelection = computerPlay();
-    // // playRound(playerSelection, computerSelection) + '\n';
     console.log(playRound(playerSelection, computerSelection)) + '\n';
+    console.log(playerPoints);
+    console.log(computerPoints);
   }
-  return playRound;
+
+  if (playerPoints === computerPoints) {
+    return "it's a tie";
+  } else if (playerPoints > computerPoints) {
+    return 'Player won the game';
+  } else {
+    return 'Computer won the game';
+  }
 }
 
-// const playerSelection = playerPlay();
-// const computerSelection = computerPlay();
-
-// console.log(playRound(playerSelection, computerSelection));
-// console.log(game());
-game();
-// console.log(playerPlay());
+console.log(game());
