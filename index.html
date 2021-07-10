@@ -5,10 +5,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/normalize (1).css" />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
     <title>Rock, paper, scissors</title>
   </head>
   <body>
-    <h1>Nothing at the moment</h1>
+    <div class="main">
+      <div class="container">
+        <div class="title">
+          <div class="message">
+            First to get <span class="blue-letter">5</span> points win
+          </div>
+        </div>
+        <div class="points">
+          <div class="playerPoints" id="playerPoints"></div>
+          <div class="computerPoints" id="computerPoints"></div>
+        </div>
+        <div class="buttons">
+          <button class="cta" id="ROCK">
+            <i class="far fa-hand-rock"></i>
+          </button>
+          <button class="cta" id="PAPER">
+            <i class="far fa-hand-paper"></i>
+          </button>
+          <button class="cta" id="SCISSORS">
+            <i class="far fa-hand-scissors"></i>
+          </button>
+        </div>
+        <div class="details">
+          <div class="option" id="byPlayer"></div>
+          <div class="option cp" id="byComputer"></div>
+          <div class="game" id="game"></div>
+          <div class="against" id="against"></div>
+          <div class="result" id="result"></div>
+        </div>
+        <button id="reload" class="cta-reload">Play again</button>
+      </div>
+    </div>
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="js/main.js"></script>
   </body>
 </html>
