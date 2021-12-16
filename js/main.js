@@ -19,11 +19,11 @@ cPoints.textContent = `Computer points : ${0}`;
 
 function playRound(playerSelection, computerSelection) {
   result.textContent = '';
-  let a = playerSelection;
   if (playerSelection === computerSelection) {
     gameResult.textContent = 'TIE';
     byPlayer.textContent = `Player selection ${playerSelection}`;
     byComputer.textContent = `Computer selection ${computerSelection}`;
+    against.textContent = `${computerSelection} ties ${playerSelection}`;
     gameResult.style.cssText = 'background-color: #898686; color: #4F504F';
   } else if (
     (playerSelection === 'ROCK' && computerSelection === 'SCISSORS') ||
@@ -47,11 +47,7 @@ function playRound(playerSelection, computerSelection) {
     gameResult.style.cssText = 'background-color: #CE2C22; color: #5E1111;';
   }
 
-  if (playerPoints == 5) {
-    disableButtons();
-  }
-
-  if (computerPoints == 5) {
+  if (playerPoints == 5 || computerPoints == 5) {
     disableButtons();
   }
 }
@@ -94,4 +90,4 @@ function reload() {
   reload = location.reload();
 }
 
-playAgain.addEventListener('click', reload, false);
+playAgain.addEventListener('click', reload);
